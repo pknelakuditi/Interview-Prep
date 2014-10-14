@@ -1,0 +1,33 @@
+import java.math.BigInteger;
+import java.util.Scanner;
+
+
+public class test {
+
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+       Scanner sc = new Scanner(System.in);
+    //  System.out.println(sc.nextInt(2));
+    	System.out.println(Math.sqrt(10));;
+	//System.out.println("keka "+pow());	
+//  System.out.println(11100|01011);
+       sc.close();
+    }
+    
+	public static long pow() {
+		long m=1000000007;
+		long t=1;
+		long temp=1;
+		for(long i=0;i<10000007;i++){
+			temp=(temp*2);
+			if(temp%m<100 && temp/m>1){
+				t=i;
+				break;
+			}
+		}
+		System.out.println(temp%m);
+		//return temp%m;
+		return t;
+	}
+}

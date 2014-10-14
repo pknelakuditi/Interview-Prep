@@ -1,0 +1,27 @@
+package algos.programmingTeam;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+//Given a graph ,checking if it is a tree or not
+
+public class BFS {
+        
+	public static void main(String[] args) {
+		ArrayList<ArrayList<Integer>> graph=new ArrayList<ArrayList<Integer>>();
+		Scanner sc=new Scanner(System.in);
+		int v=sc.nextInt();
+		int e=sc.nextInt();
+		if(e+1!=v){
+			System.out.println("No");
+			return;
+		}else{
+			for(int i=0;i<e;i++){
+				int a=sc.nextInt();
+				int b=sc.nextInt();
+				
+			}
+		}
+	}
+
+}

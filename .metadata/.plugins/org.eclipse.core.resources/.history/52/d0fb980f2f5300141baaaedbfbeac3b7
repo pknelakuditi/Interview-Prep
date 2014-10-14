@@ -1,0 +1,55 @@
+package algos.programmingTeam;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class MSTPrim {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		while (t > 0) {
+			int p = sc.nextInt();
+			int n = sc.nextInt();
+			int m = sc.nextInt();
+			ArrayList<ArrayList<Edge>> graph = new ArrayList<ArrayList<Edge>>();
+			for (int i = 0; i <= n; i++) {
+				graph.add(new ArrayList<Edge>());
+			}
+			for (int i = 0; i < m; i++) {
+				int a = sc.nextInt();
+				int b = sc.nextInt();
+				int w=sc.nextInt();
+				graph.get(a).add(new Edge(b,w));
+				graph.get(b).add(new Edge(a,w));
+			}
+
+			System.out.println(MST(graph,n));
+			t--;
+		}
+	}
+
+	public static int MST(ArrayList<ArrayList<Edge>> graph,int n) {
+		boolean[] visited = new boolean[n + 1];
+		int[] dist=new int[n+1];
+		Arrays.fill(dist, Integer.MAX_VALUE);
+		
+		
+		
+		return 0;
+	}
+
+	public static class Edge {
+		int weight;
+		int oEdge;
+
+		public Edge(int weight, int oEdge) {
+			super();
+			this.weight = weight;
+			this.oEdge = oEdge;
+		}
+	}
+
+}

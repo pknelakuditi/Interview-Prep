@@ -1,0 +1,77 @@
+package ctci.treeAndGraphs;
+
+public class BinaryTree {
+	Node head;
+	
+	public BinaryTree(){
+		this.head=null;
+	}
+	public void createNode(Node temp,int data){
+		Node newNode=new Node(data);
+		temp=newNode;
+		if(this.head==null){
+			this.head=temp;
+		}
+		
+	
+	}
+	
+	public void  printTree(Node e){
+		if(e!=null){
+			System.out.println(head.data);
+		}
+		if(e.left!=null){
+			printTree(e.left);
+		}
+		if(e.right!=null){
+			printTree(e.right);
+
+		}
+		
+		
+	}	
+
+	public static void main(String[] args) {
+		BinaryTree bt=new BinaryTree();
+		bt.createNode(bt.head, 1);
+	System.out.println(bt.head.data);
+//		if(bt.head.left==null){
+//			System.out.println("pla");
+//		}
+		
+		bt.createNode(bt.head.left, 2);
+		bt.createNode(bt.head.right,3);
+		if(bt.head.left.left==null){
+			System.out.println("pla");
+		}
+		bt.createNode(bt.head.left.left,4);
+		bt.createNode(bt.head.left.right,5);
+		bt.createNode(bt.head.right.left,6);
+		bt.createNode(bt.head.right.right,7);
+		bt.printTree(bt.head);
+
+	}
+	
+	
+	
+	public static class Node{
+		int data;
+		Node left;
+		Node right;
+		public Node(int data, Node left, Node right) {
+			super();
+			System.out.println("node inserted "+data);
+			this.data = data;
+			this.left = left;
+			this.right = right;
+		}
+	   public Node(){
+		   this(-1,null,null);
+	   }
+	   public Node(int d){
+		   this(d,null,null);
+	   }
+	
+	}
+
+}

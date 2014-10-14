@@ -1,0 +1,37 @@
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class SherlockAndSquare {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		Double[] time = new Double[n];
+		for (int i1 = 0; i1 < n; i1++) {
+			time[i1] = sc.nextDouble();
+		}
+
+		solidLines(time);
+
+		sc.close();
+	}
+
+	private static void solidLines(Double[] time) {
+		Double len = (double) 1;
+        Double temp = (double)0;
+        Double m = (double)(((Math.pow(10,9)))+7);
+       // System.out.println("m "+m);
+		DecimalFormat format = new DecimalFormat();
+        format.setDecimalSeparatorAlwaysShown(false);
+		for (int i = 0; i < time.length; i++) {
+			if (time[i] == 0) {			
+                temp=(4 * len)%m;
+				System.out.println(format.format(temp));
+			} else {				
+                temp=4*len+len*((Math.pow(2, time[i]+1))-2)%m;
+              System.out.println(format.format(temp));
+			}
+		}
+	}
+}

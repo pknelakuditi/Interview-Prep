@@ -1,0 +1,76 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+	public static void main(String[] args) {
+		/*
+		 * Enter your code here. Read input from STDIN. Print output to STDOUT.
+		 * Your class should be named Solution.
+		 */
+		Scanner sc = new Scanner(System.in);
+
+		sc.close();
+	}
+
+	public static boolean almostSorted(double[] a, int n) {
+		double temp = a[0];
+		boolean flag = true;
+		int i = 1;
+		int f1, f2;
+		int t=0;
+		while (n > 0) {
+			if (a[i] > temp) {
+				temp = a[i];
+			} else {
+				flag = false;
+				if(t==0){f1 = i;t++;}
+				f2 = i + 1;
+				swap(i, i + 1, a);
+               
+			}
+			n -= 1;
+			i++;
+		}
+		return isSorted(a);
+	}
+
+	private static void swap(int a, int b, double[] ar) {
+		double temp = ar[a];
+		ar[a] = ar[b];
+		ar[b] = temp;
+	}
+
+	public static boolean isSorted(double[] a) {		// assume is sorted, attempt to prove otherwise
+		for (int i = 0; i < a.length - 1; i++) { 
+
+			if (a[i] > a[i + 1]) {
+				return false;
+			}
+
+		}
+
+		return true; // got to the end, must be sorted
+	}
+
+	public static BigInteger fibMod(BigInteger a, BigInteger b, BigInteger n) {
+		{
+			BigInteger t = n;
+			BigInteger val = new BigInteger("0");
+			BigInteger val1 = new BigInteger("1");
+			BigInteger i = new BigInteger("2");
+			while (t.compareTo(i) == 1) {
+				val = b.multiply(b).add(a);
+				a = b;
+				b = val;
+				t = t.subtract(val1);
+				System.out.println("t " + t);
+			}
+			System.out.println(val);
+			return val;
+		}
+	}
+}

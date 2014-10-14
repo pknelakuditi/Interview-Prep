@@ -1,0 +1,92 @@
+package algos.standard.sorting;
+
+public class Search {
+    private int [] a;
+	private int b;
+	Search(int[] a ,int b){this.a=a;this.b=b;}
+	
+	public Search(int[] unsortedarray) {
+		this.a=a;this.b=0;
+	}
+
+	public void binarysearch(int[] arr,int start,int end){
+		int arr_len= end-start;
+		//System.out.println(arr_len+"arr_len");
+		int mid=start+(arr_len)/2 ;
+		//System.out.println(start+"start");
+		//System.out.println(mid+"mid");
+		//System.out.println(end+"end");
+		if (arr[mid]== b){System.out.println(mid);}
+		else if(start==end){System.out.println("No Match");}
+		else if(arr[mid]>b){
+			//System.out.println("a");
+			binarysearch(arr,start,mid-1);}
+		else if(arr[mid]<b){
+			//System.out.println("b");
+			binarysearch(arr,mid+1,end);}
+		else { System.out.println("Algo is wrong");}
+														}
+	public void binarysearch_iterative(){
+		int hi=a.length-1;
+		int low=0;
+		while(low<=hi){
+			int mid=low+(hi-low)/2;
+			if(a[mid]>b){
+				hi=mid-1;
+			}
+			else if (a[mid]<b){low=mid+1;}
+			else {System.out.println(mid);break;}
+		}
+		
+	}
+	
+	private int[] selectionsort() {
+		int len=a.length;
+		int lo=0;
+		while(len>0){
+			int x=min(lo);
+			swap(a[lo],a[x]);
+			lo=lo+1;			
+			len=len-1;
+		}return a;}
+		
+	private void swap(int x,int y){
+		int z=x;
+		x=y;
+		y=z;	
+		System.out.println("swap");
+	}
+
+	public int min(int start){
+		System.out.println(start);
+		int x =a[start];
+		System.out.println(x);
+
+		int x_no=start;
+		while(start<=a.length-1){	
+			System.out.println(start);
+			if (x>a[start]){x=a[start];x_no=start;}
+			start=start+1;
+		}			return x_no;
+
+		}
+		
+		
+	
+	
+
+	public static void main(String[] args) {
+		
+		int[] unsortedarray={1,4,2,5,3,2,7,1,9,10};
+		/*int []sortedarray={1,2,3,4,5,6,7,8,9,10,11,12,13};
+		
+		Search search=new Search(sortedarray,15);
+		//System.out.println(search.a.length);
+		search.binarysearch(search.a, 0, search.a.length-1);
+        search.binarysearch_iterative();*/
+        
+		Search search1=new Search(unsortedarray);
+       System.out.println(search1.min(0));
+	}
+
+}

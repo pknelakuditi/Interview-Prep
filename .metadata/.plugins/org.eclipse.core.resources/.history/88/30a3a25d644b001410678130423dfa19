@@ -1,0 +1,45 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+	public static void main(String[] args) {
+		/*
+		 * Enter your code here. Read input from STDIN. Print output to STDOUT.
+		 * Your class should be named Solution.
+		 */
+//		Scanner sc = new Scanner(System.in);
+//		int a = sc.nextInt();
+//		int b = sc.nextInt();
+//		int n = sc.nextInt();
+//		sc.close();
+//		fibMod(a, b, n);
+		fibMod(0,1,5);
+	}
+
+	public static int fibMod(int a, int b, int n) {
+		if (n == 1) {
+			System.out.println(a);
+			return a;
+		} else if (n == 2) {
+			System.out.println(b);
+			return b;
+		} else {
+			int t = n - 2;
+			int val = 0;
+			int temp;
+			while (t > 0) {
+				val = b * b + a;
+				System.out.println("temp "+val);
+				a = b;
+				b = val;
+				t -= 1;
+			}
+			System.out.println(val);
+			return val;
+		}
+	}
+}

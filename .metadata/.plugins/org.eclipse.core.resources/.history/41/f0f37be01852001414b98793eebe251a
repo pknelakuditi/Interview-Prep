@@ -1,0 +1,16 @@
+package week.one;
+
+import java.util.Scanner;
+
+public class VolleyBall {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		vb(sc.nextInt(),sc.nextInt());
+	}
+
+	private static void vb(int nextInt, int nextInt2) {
+		
+	}
+
+}

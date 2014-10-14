@@ -1,0 +1,10 @@
+package ctci.stackAndQueue;
+
+public class Snippet {
+	public static void main(String[] args) {
+		else if(root.left==null){
+					root.left=newNode;
+				}
+	}
+}
+

@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class IterativeStones {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+
+		for (int i = 0; i < t; i++) {
+			List<Integer> l = new ArrayList<Integer>();
+			stones(sc.nextInt()-1, sc.nextInt(), sc.nextInt(), l);
+		}
+
+	}
+
+	private static void stones(int n, int a, int b, List<Integer> l) {
+		int temp=0;
+		for(int i=0;i<n;i++){
+			System.out.println(a*i+b*(n-i));
+		}
+	}
+
+}

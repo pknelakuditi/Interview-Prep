@@ -1,0 +1,29 @@
+package algos.standard.sorting;
+
+public class Search {
+    private int [] a;
+	private int b;
+	Search(int[] a ,int b){this.a=a;this.b=b;}
+	
+	public void binarysearch(int[] arr,int start,int end){
+		int arr_len= end-start+1;
+		//System.out.println(arr_len);
+		int mid=start+(arr_len)/2 ;
+		//System.out.println(mid);
+		if (arr[mid]== b){System.out.println(mid+1);}
+		else if(arr[mid]>b){binarysearch(arr,0,mid-1);}
+		else if(arr[mid]<b){binarysearch(arr,mid+1,end);}
+		else if(start==end){System.out.println("No Match");}
+		else { System.out.println("Algo is wrong");}
+														}
+	
+	
+	public static void main(String[] args) {
+		int []a={1,2,3,4,5,6,7,8,9,10,11,12,13};
+		Search search=new Search(a,8);
+		//System.out.println(search.a.length);
+		search.binarysearch(search.a, 0, search.a.length-1);
+
+	}
+
+}

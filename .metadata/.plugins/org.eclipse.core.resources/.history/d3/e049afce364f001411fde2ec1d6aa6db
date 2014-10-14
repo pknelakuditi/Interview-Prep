@@ -1,0 +1,45 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class TreePruning {
+	public static void main(String[] args) {
+         
+		
+
+		
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int k = sc.nextInt();
+		
+		int[][] edges = new int[n - 1][2];
+		long[] weight = new long[n];
+		for (int i1 = 0; i1 < n; i1++) {
+			weight[i1] = sc.nextInt();
+		}
+		for (int i1 = 0; i1 < n - 1; i1++) {
+			edges[i1][0] = sc.nextInt();
+			edges[i1][1] = sc.nextInt();
+
+		}
+		
+		List<Integer>[] child=children(weight,edges);
+		
+		System.out.println(treeWeight(2,weight,edges));
+		
+	}
+
+	private static List<Integer>[] children(long[] weight, int[][] edges) {
+		List<Integer>[] l = new ArrayList[weight.length];
+		int temp=1;
+		boolean[] track=new boolean[weight.length];
+		track
+		return null;
+	}
+
+	private static int treeWeight(int i, long[] weight, int[][] edges) {
+		return i;
+		
+	}
+
+}

@@ -1,0 +1,40 @@
+package ctci.treeAndGraphs;
+
+public class BinaryTree {
+	Node head;
+	
+	public BinaryTree(){
+		head=null;
+	}
+	public void createNode(Node temp,int data){
+		Node newNode=new Node(data);
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	
+	
+	public static class Node{
+		int data;
+		Node left;
+		Node right;
+		public Node(int data, Node left, Node right) {
+			super();
+			this.data = data;
+			this.left = left;
+			this.right = right;
+		}
+	   public Node(){
+		   this(-1,(Node)null,(Node)null);
+	   }
+	   public Node(int d){
+		   this(d,null,null);
+	   }
+	
+	}
+
+}

@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class ScaredRobert {
+
+	public static void main(String[] args) {
+		Scanner myScan = new Scanner(System.in);
+		String inputString = myScan.nextLine();
+
+		String ans = myScan.nextLine();
+		System.out.println(key(ans));
+		// System.out.println(ans);
+		myScan.close();
+	}
+
+	private static String key(String ans) {
+		char[] a = ans.toCharArray();
+		for (int i = 1; i < a.length; i++) {
+			
+		}
+
+		return "NO";
+	}
+
+}

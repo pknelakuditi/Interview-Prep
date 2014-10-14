@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+
+public class SherlockBeast {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		while(t>0){
+			decent(sc.nextInt());
+			t--;
+		}
+	}
+
+	private static void decent(int n) {
+	 if(n==1){
+		 System.out.println(-1);
+	 }else{
+		 int x=n,y=0;
+		 System.out.println(x+" x");
+		 while(x>0 ){
+			// System.out.println("in while");
+			 System.out.println(x+" x later");
+			if(x%3==0 && y%5==0){
+				System.out.println(x+" break "+y);
+				break;
+			}else{
+				System.out.println("decrese x");
+			x=x-1;
+			y=y+1;}
+		 }
+		 while(x>0){
+			 System.out.print(5);
+			 x--;
+		 }
+		 while(y>0){
+			 System.out.print(3);
+			 y--;
+		 }
+		 System.out.println();
+		 
+	 }
+	}
+
+}

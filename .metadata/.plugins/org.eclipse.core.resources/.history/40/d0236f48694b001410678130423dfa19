@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+	public static void main(String[] args) {
+		/*
+		 * Enter your code here. Read input from STDIN. Print output to STDOUT.
+		 * Your class should be named Solution.
+		 */
+		Scanner sc = new Scanner(System.in);
+		
+		sc.close();
+	}
+
+	public static BigInteger fibMod(BigInteger a, BigInteger b, BigInteger n) {
+		 {
+			BigInteger t = n;
+			BigInteger val =new BigInteger("0");
+            BigInteger val1 =new BigInteger("1");
+			BigInteger i=new BigInteger("2");
+			while (t.compareTo(i)==1) {
+				val = b.multiply(b).add(a);
+				a = b;
+				b = val;
+				t=t.subtract(val1);
+				System.out.println("t "+t);
+			}
+			System.out.println(val);
+			return val;
+		}
+	}
+}

@@ -1,0 +1,18 @@
+package algos.standard.sorting;
+
+public class Search {
+    private int [] list;
+	
+	Search(int[] a ){this.list=a;}
+	
+	public int[] binarysorting(){
+		
+		return list;}
+	
+	
+	public static void main(String[] args) {
+		
+
+	}
+
+}

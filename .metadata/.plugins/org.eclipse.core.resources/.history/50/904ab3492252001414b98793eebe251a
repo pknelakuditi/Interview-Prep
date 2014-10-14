@@ -1,0 +1,51 @@
+package week.one;
+
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class VolleyBall {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		//vb(sc.nextInt(), sc.nextInt());
+		binomial(48,24);
+	}
+
+	private static void vb(int a, int b) {
+		int temp = Math.max(a, b);
+		int temp2 = Math.min(a, b);
+		if (temp > 25) {
+			if (temp - temp2 == 2) {
+				binomial(temp+temp2-1,temp2);
+				return;
+			} else {
+                 System.out.println(0);
+                 return;
+			}
+		}else{
+			if(temp<25){
+				System.out.println(0);
+				return;
+			}else if(temp-temp2>1){
+				binomial(temp+temp2-1,temp2);
+				return;
+			}else{
+               System.out.println(0);
+				return; 
+            }
+		}
+	}
+
+	static BigInteger binomial(final int N, final int K) {
+	    BigInteger ret = BigInteger.ONE;
+	    BigInteger mod=new BigInteger("1000000007");
+	    for (int k = 0; k < K; k++) {
+	        ret = ret.multiply(BigInteger.valueOf(N-k)).mod(mod)
+	                 .multiply(BigInteger.valueOf(k+1).modInverse(mod));
+	    }
+	    System.out.println(ret.mod(mod));
+	    return ret.mod(mod);
+	}
+
+//26 24 302776441
+}

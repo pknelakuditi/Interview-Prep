@@ -1,0 +1,35 @@
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class SherlockAndSquare {
+
+	public static void main(String[] args) {
+	
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		Double[] time = new Double[n];
+		for (int i1 = 0; i1 < n; i1++) {
+			time[i1] = sc.nextDouble();
+		}
+
+		solidLines(time);
+
+		sc.close();
+	}
+
+	private static void solidLines(Double[] time) {
+		Double len = (double) 1;
+		DecimalFormat format = new DecimalFormat();
+        format.setDecimalSeparatorAlwaysShown(false);
+		for (int i = 0; i < time.length; i++) {
+			if (time[i] == 0) {
+				  
+				System.out.println(format.format(4 * len));
+			} else {
+				
+              System.out.println(format.format(4*len+len*(Math.pow(2, time[i]))));
+			}
+		}
+	}
+
+}
