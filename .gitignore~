@@ -3,3 +3,7 @@
 RemoteSystemsTempFiles/
 */bin/
 test/
+*/.settings/
+*/.project
+*
+
