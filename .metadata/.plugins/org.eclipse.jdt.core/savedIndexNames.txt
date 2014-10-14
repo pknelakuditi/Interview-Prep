@@ -1,6 +1,0 @@
-INDEX VERSION 1.127+/home/pavan/workspaces/java-practice/.metadata/.plugins/org.eclipse.jdt.core
-900375881.index
-3177648776.index
-3070904283.index
-615512724.index
-2445474593.index

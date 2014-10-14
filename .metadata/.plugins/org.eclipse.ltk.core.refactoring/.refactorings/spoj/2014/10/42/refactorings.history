@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy package &apos;spoj&apos; to &apos;Algos/src&apos;&#x0A;- Original project: &apos;spoj&apos;&#x0A;- Destination element: &apos;Algos/src&apos;&#x0A;- Original element: &apos;spoj/src/spoj&apos;" description="Copy package" destination="=Algos/src" element1="/src&lt;spoj" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1413261237348" version="1.0"/>
-</session>
