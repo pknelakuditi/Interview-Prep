@@ -5,5 +5,4 @@ RemoteSystemsTempFiles/
 test/
 */.settings/
 */.project
-
-
+*/.classpath
