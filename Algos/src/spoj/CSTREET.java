@@ -1,5 +1,7 @@
 package spoj;
 //finding mst using prim's algorithm
+//working
+//precondition : only connected graphs are given
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -37,23 +39,23 @@ public class CSTREET {
 		Arrays.fill(dist, Integer.MAX_VALUE);
 		int mstValue=0;
 		int f=1;
+		int temp=1;
 		boolean flag = false;
 		visited[1] = true;
 		while (!flag) {
 			//update all the reachable nodes distances from visited nodes
-			for (int i = 1; i <= n; i++) {
-				if (visited[i]) {
-					for (int j = 0; j < graph.get(i).size(); j++) {
-						if (graph.get(i).get(j).weight < dist[graph.get(i).get(
+			 
+				if (visited[temp]) {
+					for (int j = 0; j < graph.get(temp).size(); j++) {
+						if (graph.get(temp).get(j).weight < dist[graph.get(temp).get(
 								j).oEdge]) {
-							dist[graph.get(i).get(j).oEdge] = graph.get(i).get(
+							dist[graph.get(temp).get(j).oEdge] = graph.get(temp).get(
 									j).weight;
 						}
 					}
 				}
-			}
+			
            
-			//getting min out of those values
             int min=Integer.MAX_VALUE;
             int index=0;
            for (int i = 1; i <= n; i++) {            	
@@ -61,6 +63,7 @@ public class CSTREET {
             		if(min>dist[i]){
            			index=i;
            			min=dist[i];
+           			temp=i;
             		}
             		
             	}
@@ -70,7 +73,7 @@ public class CSTREET {
             visited[index]=true;
             mstValue+=min;
             f++;
-           //after n iterations close the loop 
+           //after n-1 iterations close the loop 
 			if(f==n){
 				flag=true;
 			}

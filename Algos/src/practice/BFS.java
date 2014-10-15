@@ -1,14 +1,13 @@
-package algos.programmingTeam;
+package practice;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
-import java.util.Stack;
-
-
 
 //Given a graph ,checking if it is a tree or not
 
-public class DFS {
+public class BFS {
 
 	public static void main(String[] args) {
 
@@ -30,7 +29,7 @@ public class DFS {
 				graph.get(b).add(a);
 			}
 
-			if (dFS(graph, v)) {
+			if (bFS(graph, v)) {
 				System.out.println("yes");
 			} else {
 				System.out.println("no");
@@ -38,11 +37,11 @@ public class DFS {
 		}
 	}
 
-	private static boolean dFS(ArrayList<ArrayList<Integer>> graph, int v) {
+	private static boolean bFS(ArrayList<ArrayList<Integer>> graph, int v) {
 		boolean[] visited = new boolean[v + 1];
-		Stack<Integer> s = new Stack<Integer>();
+		Queue<Integer> q = new LinkedList<Integer>();
 
-	    s.add(1);
+		q.add(1);
 		visited[1] = true;
 
 		while (!q.isEmpty()) {

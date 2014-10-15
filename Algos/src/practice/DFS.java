@@ -1,13 +1,14 @@
-package algos.programmingTeam;
+package practice;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Scanner;
+import java.util.Stack;
+
+
 
 //Given a graph ,checking if it is a tree or not
 
-public class BFS {
+public class DFS {
 
 	public static void main(String[] args) {
 
@@ -29,7 +30,7 @@ public class BFS {
 				graph.get(b).add(a);
 			}
 
-			if (bFS(graph, v)) {
+			if (dFS(graph, v)) {
 				System.out.println("yes");
 			} else {
 				System.out.println("no");
@@ -37,23 +38,24 @@ public class BFS {
 		}
 	}
 
-	private static boolean bFS(ArrayList<ArrayList<Integer>> graph, int v) {
+	private static boolean dFS(ArrayList<ArrayList<Integer>> graph, int v) {
 		boolean[] visited = new boolean[v + 1];
-		Queue<Integer> q = new LinkedList<Integer>();
-
-		q.add(1);
+		Stack<Integer> s = new Stack<Integer>();
+	    s.add(1);
 		visited[1] = true;
-
-		while (!q.isEmpty()) {
-			int temp = q.remove();
-			for (int i = 0; i < graph.get(temp).size(); i++) {
-				if (!visited[i]) {
-					visited[i] = true;
-					q.add(i);
+		
+		while(!s.isEmpty()){
+			int temp=s.pop();
+			ArrayList<Integer> neighbours=graph.get(temp);
+			for(int n:neighbours){
+				if(!visited[n]){
+					s.add(n);
+					visited[n]=true;
 				}
 			}
+			
 		}
-
+		
 		for (int i = 1; i <= v; i++) {
 			if (!visited[i]) {
 				return false;

@@ -1,7 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.PriorityQueue;
 import java.util.Scanner;
 import java.util.StringTokenizer;
+
 
 
 
@@ -23,12 +25,29 @@ public class test {
 //       System.out.println(st);
 //       System.out.println(R);
 //       sc.close();
-       List<Integer> s = new ArrayList<Integer>();
+       String st="asfdfsf";
+       char a='a';
+       a+=2;
+       System.out.println(a);
+       System.out.println();
+      /* List<Integer> s = new ArrayList<Integer>();
        s.add(1);
        s.add(2);
        while(s.iterator().next()!=null){
     	   System.out.println(s.iterator().next());
-       }
+       }*/
+//       PriorityQueue<Integer> pq=new PriorityQueue<Integer>();
+//       pq.add(1);
+//       pq.add(2);
+//       pq.add(1);
+//       System.out.println(pq.toString());
+//       System.out.println(pq.remove());
+//       System.out.println(pq.remove());
+       
+       long l=1l<<60;
+       System.out.println(l);
+       
+       
     }
     
 	
