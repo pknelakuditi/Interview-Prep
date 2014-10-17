@@ -1,76 +1,98 @@
 package spoj.current;
 //longest path in a tree
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.Stack;
 
-import spoj.CSTREET.Edge;
 
 public class BENEFACT {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int t = sc.nextInt();
-		while (t > 0) {
-			int p = sc.nextInt();
-			int n = sc.nextInt();
-			int m = sc.nextInt();
-			ArrayList<ArrayList<Edge>> graph = new ArrayList<ArrayList<Edge>>();
-			for (int i = 0; i <= n; i++) {
-				graph.add(new ArrayList<Edge>());
-			}
-			for (int i = 0; i < m; i++) {
-				int a = sc.nextInt();
-				int b = sc.nextInt();
-				int w = sc.nextInt();
-				graph.get(a).add(new Edge(b, w));
-				graph.get(b).add(new Edge(a, w));
-			}
-
-			System.out.println(DFS(graph, n));
-			t--;
-		}
-	}
+	static boolean[] visited;
 	
-	private static int DFS(ArrayList<ArrayList<Edge>> graph, int n) {
+	public static void main(String[] args) throws Exception {
 		
-//		boolean[] visited = new boolean[v + 1];
-//		Stack<Integer> s = new Stack<Integer>();
-//	    s.add(1);
-//		visited[1] = true;
-//		
-//		while(!s.isEmpty()){
-//			int temp=s.pop();
-//			ArrayList<Integer> neighbours=graph.get(temp);
-//			for(int n:neighbours){1
-//				if(!visited[n]){
-//					s.add(n);
-//					visited[n]=true;
-//				}
-//			}
-//			
-//		}
-//		
-//		for (int i = 1; i <= v; i++) {
-//			if (!visited[i]) {
-//				return false;
-//			}
-//		}
+		Scanner in = new Scanner(System.in);
+		int t = in.nextInt();
 
-		//return true;
-		
-		
-		
-		return -1;
+		for (int i = 1; i <= t; i++) {
+
+			int vertices = in.nextInt();
+			
+
+			Vertex[] graph = new Vertex[vertices + 1];
+
+			for (int j = 0; j <= vertices; j++) {
+				graph[j] = new Vertex();
+			}
+
+			for (int k = 0; k < vertices-1; k++) {
+				int start = in.nextInt();
+				int finish = in.nextInt();
+				int cost = in.nextInt();
+				graph[start].neighbors.add(new Edge(finish, cost));
+				graph[finish].neighbors.add(new Edge(start, cost));
+			}
+			
+			int max=0;
+			for(int i1=1;i1<=vertices;i1++){
+				visited = new boolean[vertices + 1];
+				int t1=dFS(visited, i1, graph, 0);
+				if(max<t1){max=t1;};
+			}
+       
+			
+			System.out.println(max);
+			
+
+			
+		}
 	}
 
-	public static class Edge {
-		int weight;
-		int oEdge;
+	static class Vertex {
+		List<Edge> neighbors;
 
-		public Edge(int oEdge, int weight) {
-			super();
-			this.weight = weight;
-			this.oEdge = oEdge;
+		public Vertex() {
+			neighbors = new ArrayList<Edge>();
 		}
+	}
+
+	static class Edge  {
+		int end, cost;
+
+		public Edge(int end, int cost) {
+			this.end = end;
+			this.cost = cost;
+		}
+		
+	}
+
+	private static int dFS(boolean[] visited ,int source,Vertex[] graph ,int cost) {
+		
+		Stack<Integer> s = new Stack<Integer>();
+	    s.add(source);
+		visited[source] = true;
+		int max=0;
+		int t;
+		
+		while(!s.isEmpty()){
+			int temp=s.pop();
+		
+			ArrayList<Edge> neighbours=(ArrayList<Edge>) graph[temp].neighbors;
+			
+			for(Edge n:neighbours){
+				if(!visited[n.end]){
+					visited[n.end]=true;
+					t=n.cost+dFS(visited,n.end,graph,cost);
+					if(max<t){
+						max=t;
+						
+					//	System.out.println("end "+n.end);
+					}
+				}
+			}
+			
+		}		
+         
+		return max;
 	}
 }

@@ -1,4 +1,5 @@
 package week.eleven;
+
 import java.util.Scanner;
 
 public class SherlockAndSquare {
@@ -12,18 +13,18 @@ public class SherlockAndSquare {
 		}
 		sherlock(time);
 		sc.close();
-	//	System.out.println(pow(1000));
-		
+		// System.out.println(pow(1000));
+
 	}
 
 	private static void sherlock(Long[] a) {
-		long m=1000000007;
+		long m = 1000000007;
 		for (int i1 = 0; i1 < a.length; i1++) {
-			//temp = BigInteger.ZERO;
+			// temp = BigInteger.ZERO;
 			if (a[i1] == 0) {
 				System.out.println(4);
 			} else {
-				System.out.println((2+pow(a[i1]+1))%m);
+				System.out.println((2 + pow(a[i1] + 1)) % m);
 			}
 		}
 	}
@@ -37,8 +38,8 @@ public class SherlockAndSquare {
 				temp = temp * a % m;
 			}
 			a = a * a % m;
-	l=l/2;
-			
+			l = l / 2;
+
 		}
 		return temp;
 	}

@@ -8,14 +8,16 @@ import java.util.Queue;
 import java.util.Scanner;
 
 public class TreePruning {
+	static int[][] edges;
+	static int[] weight;
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		int k = sc.nextInt();
 
-		int[][] edges = new int[n - 1][2];
-		int[] weight = new int[n];
+		 edges = new int[n - 1][2];
+		 weight = new int[n];
 		for (int i1 = 0; i1 < n; i1++) {
 			weight[i1] = sc.nextInt();
 		}
