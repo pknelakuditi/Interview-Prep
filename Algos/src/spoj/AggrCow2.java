@@ -1,4 +1,4 @@
-package spoj.current;
+package spoj;
 /*
  * Binarysearch for the max difference of stall btw cows
 */

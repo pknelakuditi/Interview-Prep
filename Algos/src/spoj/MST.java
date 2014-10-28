@@ -1,19 +1,16 @@
 package spoj;
-//finding mst using prim's algorithm
-//working
-//precondition : only connected graphs are given
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class CSTREET {
 
+public class MST {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int t = sc.nextInt();
+		int t = 1;
 		while (t > 0) {
-			int p = sc.nextInt();
+		//	int p = sc.nextInt();
 			int n = sc.nextInt();
 			int m = sc.nextInt();
 			ArrayList<ArrayList<Edge>> graph = new ArrayList<ArrayList<Edge>>();
@@ -28,17 +25,17 @@ public class CSTREET {
 				graph.get(b).add(new Edge(a, w));
 			}
 
-			System.out.println(MST(graph, n)*p);
+			System.out.println(mst(graph, n));
 			t--;
 		}
 		sc.close();
 	}
 
-	public static int MST(ArrayList<ArrayList<Edge>> graph, int n) {
+	public static long mst(ArrayList<ArrayList<Edge>> graph, int n) {
 		boolean[] visited = new boolean[n + 1];
 		int[] dist = new int[n + 1];
 		Arrays.fill(dist, Integer.MAX_VALUE);
-		int mstValue=0;
+		long mstValue=0;
 		int f=1;
 		int temp=1;
 		boolean flag = false;
@@ -92,5 +89,4 @@ public class CSTREET {
 			this.oEdge = oEdge;
 		}
 	}
-
 }

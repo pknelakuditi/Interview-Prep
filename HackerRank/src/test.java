@@ -1,5 +1,5 @@
-import java.util.PriorityQueue;
-import java.util.Scanner;
+import java.util.ArrayList;
+
 
 
 
@@ -9,8 +9,24 @@ public class test {
 
 
     public static void main(String[] args) {
+    	
+//    	ArrayList<Integer> arr =new ArrayList<Integer>();
+//    	arr.add(1);
+//    	arr.add(2);
+//    	arr.add(3);
+//    	arr.add(4);
+//    	System.out.println(arr.get(2));
+//    	for(int i:arr){System.out.print(i+" ");}
+//    	System.out.println();
+//    	
+//    	arr.add(2, 8);
+//    	System.out.println(arr.get(2));
+//    	for(int i:arr){System.out.print(i+" ");}
+    	System.out.println("pavan".indexOf("a",-1));;
+    	
+    }
         /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
-       Scanner sc = new Scanner(System.in);
+ //      Scanner sc = new Scanner(System.in);
     //  System.out.println(sc.nextInt(2));
 //    	System.out.println(Math.sqrt(10));
 //    	int a=(int) Math.sqrt(10);
@@ -45,27 +61,28 @@ public class test {
        
     //   long l=1l<<60;
      //  System.out.println(l);
-       Abs[] abs =new Abs[5];
-       abs[0]=new Abs(10);
-       abs[1]=new Abs(5);
-       abs[2]=new Abs(-6);
-       abs[3]=new Abs(-7);
-       abs[4]=new Abs(11);
-       PriorityQueue<Abs> pq=new PriorityQueue<Abs>();
-      for(Abs e:abs){pq.add(e);}
-      System.out.println(pq.remove().a);
-      abs[2]=new Abs(55);
-      pq.add(abs[2]);
-//      Iterator<Abs> i=pq.iterator();
-//		while(i.hasNext()){
-//			Abs te=i.next();
-//			System.out.print(te.a+" ");
-//		}
-//		System.out.println();
-      for(int i1=0;i1<5;i1++){
-    	 System.out.println(pq.remove().a);;
-      }
-    }
+//       Abs[] abs =new Abs[5];
+//       abs[0]=new Abs(10);
+//       abs[1]=new Abs(5);
+//       abs[2]=new Abs(-6);
+//       abs[3]=new Abs(-7);
+//       abs[4]=new Abs(11);
+//       PriorityQueue<Abs> pq=new PriorityQueue<Abs>();
+//      for(Abs e:abs){pq.add(e);}
+//      System.out.println(pq.remove().a);
+//      abs[2]=new Abs(55);
+//      pq.add(abs[2]);
+//      pq.remove(abs[2]);
+////      Iterator<Abs> i=pq.iterator();
+////		while(i.hasNext()){
+////			Abs te=i.next();
+////			System.out.print(te.a+" ");
+////		}
+////		System.out.println();
+//      while(!pq.isEmpty()){
+//    	  System.out.println(pq.remove().a);
+//      }
+//    }
     
     
     static class Abs implements Comparable<Abs>{

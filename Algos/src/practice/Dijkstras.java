@@ -8,21 +8,28 @@ import java.util.Scanner;
 class Dijkstras {
 
 	public static int dijkstras(Vertex[] graph, int source, int destination) {
-
+        boolean[] visited =new boolean[graph.length];
 		Vertex current = graph[source];
+		
 		PriorityQueue<Vertex> pq = new PriorityQueue<Vertex>();
-
+        current.minDistance=0;
 		pq.add(current);
 		while (!pq.isEmpty()) {
 			current = pq.remove();
 			if (current.id == destination) {
 				break;
 			}
+			if(visited[current.id]){
+				continue;
+			}else{
+				visited[current.id]=true;
+			}
 			for (Edge e : current.neighbors) {
+				if((visited[e.end])){continue;}
 				Vertex end = graph[e.end];
 				int distance = e.distance;
 				int newMin = distance + current.minDistance;
-				if (newMin < end.minDistance) {
+				if (newMin < end.minDistance  ) {
 					end.minDistance = newMin;
 					pq.add(end);
 				}
