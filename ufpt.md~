@@ -2,7 +2,6 @@
 -------------------------
 using QUEUE :
 -----------
-```java
 q.add(start);
 visited[start] = true;
 		while (!q.isEmpty()) {
@@ -13,16 +12,12 @@ visited[start] = true;
 					q.add(i);
 				}
 			}
-		}		
-``` 		
+		}
 
 ##Depth First Search
 -------------------------
 using stack :
 -----------
-```java
-class Main{
-public static void dfs(int start){
 q.add(start);
 visited[start] = true;
 		while(!s.isEmpty()){
@@ -36,16 +31,10 @@ visited[start] = true;
 			}
 			
 		}
-}
 
-}
-```
 
 ##Dijkstra's Algorithm 
 --------------------------
-
-```  
-
 public static int dijkstras(Vertex[] graph, int source, int destination) {
         boolean[] visited =new boolean[graph.length];
 		Vertex current = graph[source];
@@ -78,14 +67,15 @@ public static int dijkstras(Vertex[] graph, int source, int destination) {
 			}
 
 		}
-		return graph[destination].minDistance;		
+		return graph[destination].minDistance;
+		
 		
 	}
-```
 
 ##Prim's Algorithm
 ------------------------
-```
+
+
 	private static int PrimsAlgorithm(Vertex[] graph, int source) {
 		PriorityQueue<Edge> pq=new PriorityQueue<Edge>();
 		boolean[] visited=new boolean[graph.length];
@@ -120,11 +110,10 @@ public static int dijkstras(Vertex[] graph, int source, int destination) {
 		
 		return cost;
 	}
-```
+
 ##Kruskal's algo : comparable on the cost of edge and put it pq and add the edges into MST when only it results in union of two different sets.
 ------------------
 taking care of disjoint sets:
-```java
 public static class DisjointSets {
 		int[] parents;
 
@@ -151,9 +140,9 @@ public static class DisjointSets {
 		}
 
 	}
-```
+
 add all the edges to pq and send it as parameter for function
-```
+
 private static int kruskals(PriorityQueue<Edge> pq, int v) {
 		DisjointSets ds=new DisjointSets(v);
 		Edge current;
@@ -175,16 +164,16 @@ private static int kruskals(PriorityQueue<Edge> pq, int v) {
 		}
 		
 	}
-```java
+
 ##Range Minimum Query (RMQ)
 --------------------------
 description: on arrays to find the position of an element with the minimum value between two specified indices.
 
 Algo:
- preprocess sqrt(N) segment minimums
- range given then 2 half participated and remaining all full participated segments.
-* preprocess: O(N)
-* range query : O(sqrt(N))
+preprocess sqrt(N) segment minimums
+range given then 2 half participated and remaining all full participated segments.
+preprocess: O(N)
+range query : O(sqrt(N))
 
 when update(i,X)
 then calculate min for inserted segment O(sqrt(N))
@@ -206,7 +195,7 @@ else move both pointers to next height segment to their resoectice parents
 other algo : write inorder of the tree and find minimum in range of tree index [a,b] . 
 
 try coding it
-```java
+
 struct Node *findLCA(struct Node* root, int n1, int n2)
 {
    
@@ -221,7 +210,6 @@ struct Node *findLCA(struct Node* root, int n1, int n2)
  
      return (left_lca != NULL)? left_lca: right_lca;
 }
-```
 
 problems:
 http://www.spoj.com/problems/LCASQ/
@@ -240,14 +228,14 @@ b[] =cumative sum array
 get an array which have sum of all the b[i]=b[i-1]+a[i]
 
 
-* preprocessing : o(N) 
-* query: b[j]-b[i-1]  o(1)
-* update: o(N)
+*preprocessing : o(N) 
+*query: b[j]-b[i-1]  o(1)
+*update: o(N)
 
 can be done better by using:
  	**Fenwick tree or binary indexed tree**
  	-------------------------------------------
-```java	
+```	
 void updateArray(val,index)
 {
 	while(index<=fenwickArray.length){
@@ -255,7 +243,7 @@ void updateArray(val,index)
 		index = index + (index&-index)
 }
 }
-```
+ 	```
  	
 http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=binaryIndexedTrees
 http://pdf.aminer.org/001/073/976/a_new_data_structure_for_cumulative_frequency_tables.pdf  
@@ -265,7 +253,6 @@ http://pdf.aminer.org/001/073/976/a_new_data_structure_for_cumulative_frequency_
 TO do:
 -------
 basic:
-
 http://www.spoj.com/problems/FCTRL/
 http://www.spoj.com/problems/BSEARCH1/
 http://www.spoj.com/problems/HANGOVER/
