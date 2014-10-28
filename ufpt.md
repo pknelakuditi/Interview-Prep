@@ -22,7 +22,7 @@ using stack :
 -----------
 ```java
 class Main{
-public static void dfs(int start){
+public static void dfs(ArrayList<ArrayList<Integer>> graph,int start){
 q.add(start);
 visited[start] = true;
 		while(!s.isEmpty()){
@@ -42,9 +42,9 @@ visited[start] = true;
 ```
 
 ##Dijkstra's Algorithm 
---------------------------
 
-```  
+
+```java  
 
 public static int dijkstras(Vertex[] graph, int source, int destination) {
         boolean[] visited =new boolean[graph.length];
@@ -85,7 +85,7 @@ public static int dijkstras(Vertex[] graph, int source, int destination) {
 
 ##Prim's Algorithm
 ------------------------
-```
+```java
 	private static int PrimsAlgorithm(Vertex[] graph, int source) {
 		PriorityQueue<Edge> pq=new PriorityQueue<Edge>();
 		boolean[] visited=new boolean[graph.length];
@@ -121,8 +121,9 @@ public static int dijkstras(Vertex[] graph, int source, int destination) {
 		return cost;
 	}
 ```
-##Kruskal's algo : comparable on the cost of edge and put it pq and add the edges into MST when only it results in union of two different sets.
-------------------
+##Kruskal's algo : 
+comparable on the cost of edge and put it pq and add the edges into MST when only it results in union of two different sets.
+
 taking care of disjoint sets:
 ```java
 public static class DisjointSets {
@@ -153,7 +154,7 @@ public static class DisjointSets {
 	}
 ```
 add all the edges to pq and send it as parameter for function
-```
+```java
 private static int kruskals(PriorityQueue<Edge> pq, int v) {
 		DisjointSets ds=new DisjointSets(v);
 		Edge current;
@@ -175,7 +176,7 @@ private static int kruskals(PriorityQueue<Edge> pq, int v) {
 		}
 		
 	}
-```java
+```
 ##Range Minimum Query (RMQ)
 --------------------------
 description: on arrays to find the position of an element with the minimum value between two specified indices.
@@ -246,7 +247,7 @@ get an array which have sum of all the b[i]=b[i-1]+a[i]
 
 can be done better by using:
  	**Fenwick tree or binary indexed tree**
- 	-------------------------------------------
+ 	
 ```java	
 void updateArray(val,index)
 {
@@ -262,7 +263,7 @@ http://pdf.aminer.org/001/073/976/a_new_data_structure_for_cumulative_frequency_
 
 
 
-TO do:
+TO DO:
 -------
 basic:
 
@@ -281,9 +282,9 @@ http://goo.gl/e9h857
 http://goo.gl/orqp9H
 
 
-suffix tree,suffix array
-segment tree(intialize and use for range minimum query problem 
-result in O(N) prepocessing and O(log(N)) query processing 
+* suffix tree,suffix array
+* segment tree(intialize and use for range minimum query problem 
+	result in O(N) prepocessing and O(log(N)) query processing 
 
 
 
