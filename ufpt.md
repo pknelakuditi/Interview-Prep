@@ -352,14 +352,14 @@ http://www.spoj.com/problems/GOSTONES     NEW
 
 Tree:
 ----------------
-spoj.com/problems/PT07Y
+http://www.spoj.com/problems/PT07Y
 
-spoj.com/problems/TUTBFS
-spoj.com/problems/PT07Y
-spoj.com/problems/UCV2013H
-spoj.com/problems/LABYR1
-spoj.com/problems/SHOP
-spoj.com/problems/BYTESE1
-spoj.com/problems/BITMAP
-spoj.com/problems/PT07Z
+http://www.spoj.com/problems/TUTBFS
+http://www.spoj.com/problems/PT07Y
+http://www.spoj.com/problems/UCV2013H
+http://www.spoj.com/problems/LABYR1
+http://www.spoj.com/problems/SHOP
+http://www.spoj.com/problems/BYTESE1
+http://www.spoj.com/problems/BITMAP
+http://www.spoj.com/problems/PT07Z
 
